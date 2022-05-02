@@ -15,7 +15,7 @@ spec:
         app.kubernetes.io/name: sbom-operator
     spec:
       containers:
-      - image: ghcr.io/ckotzbauer/sbom-operator:latest
+      - image: codenotary/sbom-operator:0.10.0
         name: operator
         env:
         - name: POD_NAMESPACE
@@ -36,7 +36,7 @@ spec:
         args:
           # example values
           - --cron="0 6 * * * *"
-          - --job-image=ghcr.io/ckotzbauer/sbom-operator/cas:0.10.0
+          - --job-image=codenotary/sbom-operator:vcn-0.11.0
           #- --pod-label-selector=sbom-operator\=true
         ports:
         - containerPort: 8080
